@@ -15,9 +15,11 @@ async function callApi<T,>({ method, endpoint, apiKey, body, params }: ApiCallOp
     throw new Error('API Key (Bearer Token) é obrigatória.');
   }
 
-  const url = new URL(`${API_BASE_URL}/${endpoint}`);
+  let urlString = `${API_BASE_URL}/${endpoint}`;
+
   if (params) {
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    const searchParams = new URLSearchParams(params);
+    urlString += `?${searchParams.toString()}`;
   }
 
   const headers = new Headers({
@@ -34,7 +36,7 @@ async function callApi<T,>({ method, endpoint, apiKey, body, params }: ApiCallOp
     options.body = JSON.stringify(body);
   }
 
-  const response = await fetch(url.toString(), options);
+  const response = await fetch(urlString, options);
 
   if (!response.ok) {
     let errorData;
