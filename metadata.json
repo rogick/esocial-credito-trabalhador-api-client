@@ -1,0 +1,5 @@
+{
+  "name": "eSocial Consignado API Client",
+  "description": "A web application to interact with the eSocial Consignado API for sending and consulting loan contract batches. Users can input API credentials and payload data to test the endpoints.",
+  "requestFramePermissions": []
+}
