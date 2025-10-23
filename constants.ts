@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'https://producaorestrita-esocialconsignado.df-1.estaleiro.serpro.gov.br/recepcao-lote/api/ContratoEmprestimoConsignado';
+export const API_BASE_URL = '/api/recepcao-lote/api/ContratoEmprestimoConsignado';
