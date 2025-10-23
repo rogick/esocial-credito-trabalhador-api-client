@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://producaorestrita-esocialconsignado.df-1.estaleiro.serpro.gov.br/:path*"
+    }
+  ]
+}
